@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
               whileHover={{ scale: 1.1 }}
               className="text-4xl font-extrabold text-blue-400 tracking-wide cursor-pointer"
             >
-              🌐 {"<JM /> Portfolio"}
+              🌐 {"<JMondelo /> Portfolio"}
             </motion.h1>
 
             <ul className="hidden md:flex gap-12 text-xl font-semibold">

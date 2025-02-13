@@ -157,16 +157,13 @@ export default function Destacado() {
             >
               <IoClose />
             </button>
-            <video
+            <iframe
+              src="https://drive.google.com/file/d/1zVkuuxueTcxPXdH73mqljOjnTkrhUnCF/preview"
+              width="100%"
+              height="500px"
+              allow="autoplay"
               className="w-full rounded-lg"
-              autoPlay
-              loop
-              playsInline
-              controls
-            >
-              <source src="/video/videoGym.mp4" type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
+            />
           </div>
         </div>
       )}

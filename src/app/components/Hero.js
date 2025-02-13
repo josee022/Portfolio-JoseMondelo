@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 export default function Hero() {
   return (
@@ -39,17 +40,21 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 1 }}
       >
         <a
-          href="#proyectos"
+          target="_blank"
+          href="https://github.com/josee022?tab=repositories"
           className="px-10 py-5 bg-blue-500 text-white rounded-lg text-2xl font-bold hover:bg-blue-600 transition shadow-lg"
         >
           🚀 Ver Proyectos
         </a>
-        <a
-          href="#contacto"
-          className="px-10 py-5 border border-blue-500 text-blue-400 rounded-lg text-2xl font-bold hover:bg-blue-500 hover:text-white transition shadow-lg"
+        <Link
+          to="contacto"
+          smooth={true}
+          duration={500}
+          offset={-90}
+          className="px-10 py-5 border border-blue-500 text-blue-400 rounded-lg text-2xl font-bold hover:bg-blue-500 hover:text-white transition shadow-lg cursor-pointer"
         >
           ✉️ Contacto
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

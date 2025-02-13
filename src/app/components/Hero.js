@@ -34,7 +34,7 @@ export default function Hero() {
       </motion.p>
 
       <motion.div
-        className="mt-10 flex gap-8"
+        className="mt-10 flex gap-8 flex-wrap justify-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -42,19 +42,28 @@ export default function Hero() {
         <a
           target="_blank"
           href="https://github.com/josee022?tab=repositories"
-          className="px-10 py-5 bg-blue-500 text-white rounded-lg text-2xl font-bold hover:bg-blue-600 transition shadow-lg"
+          className="px-8 py-4 bg-blue-500 text-white rounded-lg text-xl font-bold hover:bg-blue-600 transition shadow-lg flex items-center gap-2"
         >
           🚀 Ver Proyectos
         </a>
+
         <Link
           to="contacto"
           smooth={true}
           duration={500}
           offset={-90}
-          className="px-10 py-5 border border-blue-500 text-blue-400 rounded-lg text-2xl font-bold hover:bg-blue-500 hover:text-white transition shadow-lg cursor-pointer"
+          className="px-8 py-4 border border-blue-500 text-blue-400 rounded-lg text-xl font-bold hover:bg-blue-500 hover:text-white transition shadow-lg cursor-pointer flex items-center gap-2"
         >
           ✉️ Contacto
         </Link>
+
+        <a
+          href="/docs/cv.pdf"
+          download="cv.pdf"
+          className="px-8 py-4 bg-gray-800 text-white rounded-lg text-xl font-bold hover:bg-gray-700 transition shadow-lg flex items-center gap-2"
+        >
+          📄 Descargar CV
+        </a>
       </motion.div>
     </section>
   );

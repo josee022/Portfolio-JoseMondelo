@@ -42,7 +42,7 @@ export default function SobreMiPersonal() {
           <Card
             img="/image/concierto.jpg"
             title="🎶 Música & Motivación"
-            description="La música es parte de mi vida. Desde sonidos relajantes para concentrarme hasta festivales en vivo."
+            description="La música es parte de mi vida. Desde sonidos relajantes para concentrarme hasta festivales en vivo. Me ayuda a desconectar"
           />
 
           <Card

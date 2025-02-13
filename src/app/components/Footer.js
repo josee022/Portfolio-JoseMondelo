@@ -1,6 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaCode } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaInstagram,
+  FaCode,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -16,7 +22,8 @@ export default function Footer() {
         </h2>
 
         <p className="text-gray-400 mb-4 text-sm md:text-base">
-          Desarrollado con <span className="text-blue-400">Next.js</span> y <span className="text-blue-400">Tailwind CSS</span>.
+          Desarrollado con <span className="text-blue-400">Next.js</span> y{" "}
+          <span className="text-blue-400">Tailwind CSS</span>.
         </p>
 
         <ul className="flex justify-center space-x-6 text-gray-400 text-lg">
@@ -81,14 +88,16 @@ export default function Footer() {
             href="https://github.com/josee022/Portfolio-JoseMondelo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center text-gray-400 hover:text-blue-400 transition text-sm md:text-base"
+            className="flex items-center justify-center text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-105"
           >
-            <FaCode className="mr-2" /> Código fuente del portfolio
+            <FaCode className="mr-2 text-blue-400 transition duration-300 transform hover:rotate-12" />
+            <span className="text-blue-400">Código fuente del portfolio</span>
           </a>
         </div>
 
         <p className="mt-6 text-gray-500 text-sm">
-          © {new Date().getFullYear()} José Mondelo Álvarez. Todos los derechos reservados.
+          © {new Date().getFullYear()} José Mondelo Álvarez. Todos los derechos
+          reservados.
         </p>
       </div>
     </motion.footer>

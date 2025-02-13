@@ -26,9 +26,9 @@ export default function SobreMiPersonal() {
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+
           <Card
-            img="/image/gym.jpg"
+            img="/image/gym.JPG"
             title="🏋️‍♂️ Fitness & Disciplina"
             description="Entreno de lunes a sábado combinando fuerza y cardio. Cuidar mi salud es clave."
             customClass="object-[0px_-100px]"
@@ -47,7 +47,7 @@ export default function SobreMiPersonal() {
           />
 
           <Card
-            img="/image/amigos.jpg"
+            img="/image/amigos.JPG"
             title="🤝 Amigos & Conexiones"
             description="Valoro el tiempo con amigos, compartiendo experiencias y aprendiendo de cada uno de ellos."
           />

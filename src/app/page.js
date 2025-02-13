@@ -4,6 +4,7 @@ import SobreMiPersonal from "./components/SobreMiPersonal";
 import Habilidades from "./components/Habilidades";
 import Footer from "./components/Footer";
 import Contacto from "./components/Contacto";
+import Destacado from "./components/Destacado";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SobreMiProfesional />
       <SobreMiPersonal />
       <Habilidades />
+      <Destacado />
       <Contacto />
       <Footer />
     </main>

@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
                 "Inicio",
                 "Sobre Mí",
                 "Habilidades",
-                "Proyectos",
+                "Destacado",
                 "Contacto",
               ].map((item, index) => (
                 <motion.li
@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
                 "Inicio",
                 "Sobre Mí",
                 "Habilidades",
-                "Proyectos",
+                "Destacado",
                 "Contacto",
               ].map((item, index) => (
                 <motion.li

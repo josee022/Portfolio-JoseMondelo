@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaCode,
 } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 export default function Footer() {
   return (
@@ -27,19 +28,23 @@ export default function Footer() {
         </p>
 
         <ul className="flex justify-center space-x-6 text-gray-400 text-lg">
-          {["Inicio", "Sobre Mí", "Habilidades", "Proyectos", "Contacto"].map(
+          {["Inicio", "Sobre Mí", "Habilidades", "Destacado", "Contacto"].map(
             (item, index) => (
               <motion.li
                 key={index}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <a
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="hover:text-blue-400 transition"
+                <Link
+                  to={item.toLowerCase().replace(" ", "-")}
+                  smooth={true}
+                  duration={500}
+                  offset={-90}
+                  className="relative cursor-pointer group hover:text-blue-400 transition"
                 >
                   {item}
-                </a>
+                  <span className="absolute left-0 w-0 group-hover:w-full h-1 bg-blue-400 transition-all duration-300"></span>
+                </Link>
               </motion.li>
             )
           )}

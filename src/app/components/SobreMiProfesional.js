@@ -8,7 +8,7 @@ export default function SobreMi() {
   return (
     <section
       id="sobre-mí"
-      className="py-16 bg-gray-900 text-white scroll-mt-20"
+      className="py-16 bg-transparent text-white scroll-mt-20"
     >
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
         <motion.div

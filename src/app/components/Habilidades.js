@@ -36,7 +36,7 @@ import { DiVisualstudio } from "react-icons/di";
 
 export default function Habilidades() {
   return (
-    <section id="habilidades" className="py-20 bg-gray-800 text-white">
+    <section id="habilidades" className="py-20 bg-transparent text-white">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <motion.h2
           className="text-4xl font-bold text-blue-400 mb-10"
@@ -70,7 +70,7 @@ export default function Habilidades() {
           ].map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-gray-900 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
+              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
@@ -101,7 +101,7 @@ export default function Habilidades() {
               ].map((tool, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-900 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -132,7 +132,7 @@ export default function Habilidades() {
               ].map((tool, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-900 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -164,7 +164,7 @@ export default function Habilidades() {
           ].map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-gray-900 p-6 rounded-lg shadow-lg flex items-center justify-center text-lg font-semibold"
+              className="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center text-lg font-semibold"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >

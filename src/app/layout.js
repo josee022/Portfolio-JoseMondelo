@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import Particulas from "./components/Particulas";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="es">
-      <body className="bg-gray-900 text-white">
+      <body className="relative bg-gray-900 text-white">
+        <Particulas />
+
         <motion.nav
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

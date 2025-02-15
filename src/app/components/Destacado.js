@@ -48,7 +48,7 @@ export default function Destacado() {
   return (
     <section
       id="destacado"
-      className="py-16 bg-gray-900 text-white text-center"
+      className="py-16 bg-transparent text-white text-center"
     >
       <div className="container mx-auto px-6 md:px-12">
         <motion.h2

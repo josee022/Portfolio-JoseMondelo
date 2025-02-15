@@ -78,7 +78,7 @@ export default function Contacto() {
   };
 
   return (
-    <section id="contacto" className="py-20 bg-gray-900 text-white">
+    <section id="contacto" className="py-20 bg-transparent text-white">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <motion.h2
           className="text-4xl font-extrabold text-blue-400 mb-12"

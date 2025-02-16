@@ -13,6 +13,7 @@ export default function ParticlesBackground() {
     <Particles
       id="tsparticles"
       className="absolute inset-0 -z-10"
+      init={particlesInit}
       options={{
         fullScreen: { enable: true, zIndex: -1 },
         particles: {

@@ -1,15 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import Animation from "./animacion"; // Ruta correcta a la animación
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="h-[90vh] flex flex-col justify-center items-center text-center px-8"
+      className="relative h-[85vh] flex flex-col justify-center items-center text-center px-8"
     >
+      {/* Animación más a la izquierda */}
+      <div className="absolute top-10 right-[12%] w-[140px] md:w-[180px]">
+        <Animation />
+      </div>
+
+      {/* Contenido principal más arriba */}
       <motion.h1
-        className="text-7xl md:text-8xl font-extrabold text-blue-400"
+        className="text-7xl md:text-8xl font-extrabold text-blue-400 mt-[-20px]"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -18,7 +25,7 @@ export default function Hero() {
       </motion.h1>
 
       <motion.p
-        className="mt-6 text-2xl md:text-3xl text-gray-300 max-w-4xl leading-relaxed"
+        className="mt-4 text-2xl md:text-3xl text-gray-300 max-w-4xl leading-relaxed"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -33,8 +40,9 @@ export default function Hero() {
         <span className="text-blue-400">React, Laravel, PostgreSQL, etc</span>.
       </motion.p>
 
+      {/* Botones (sin modificar) */}
       <motion.div
-        className="mt-10 flex gap-8 flex-wrap justify-center"
+        className="mt-8 flex gap-8 flex-wrap justify-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1 }}

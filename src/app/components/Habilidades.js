@@ -5,7 +5,7 @@ import {
   FaAngular,
   FaLaravel,
   FaDatabase,
-  FaHtml5 ,
+  FaHtml5,
   FaCss3Alt,
   FaJsSquare,
   FaPhp,
@@ -34,6 +34,15 @@ import {
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 
+const hoverEffect = {
+  hover: {
+    scale: 1.1,
+    rotate: 5,
+    boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)",
+    transition: { duration: 0.2 },
+  },
+};
+
 export default function Habilidades() {
   return (
     <section id="habilidades" className="py-20 bg-transparent text-white">
@@ -49,32 +58,33 @@ export default function Habilidades() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {[
-            { icon: FaReact, name: "React" },
-            { icon: FaAngular, name: "Angular" },
-            { icon: FaLaravel, name: "Laravel" },
-            { icon: FaDatabase, name: "SQL & NoSQL" },
-            { icon: FaHtml5, name: "HTML" },
-            { icon: FaCss3Alt, name: "CSS" },
-            { icon: SiPostgresql, name: "PostgreSQL" },
-            { icon: SiMysql, name: "MySQL" },
-            { icon: SiMongodb, name: "MongoDB" },
-            { icon: SiTailwindcss, name: "Tailwind CSS" },
-            { icon: FaJsSquare, name: "JavaScript" },
-            { icon: SiTypescript, name: "TypeScript" },
-            { icon: FaPhp, name: "PHP" },
-            { icon: FaJava, name: "Java" },
-            { icon: FaPython, name: "Python" },
-            { icon: FaDocker, name: "Docker" },
-            { icon: SiAstro, name: "Astro.build" },
-            { icon: SiInertia, name: "Inertia.js" },
+            { icon: FaReact, name: "React", color: "text-cyan-400" },
+            { icon: FaAngular, name: "Angular", color: "text-red-400" },
+            { icon: FaLaravel, name: "Laravel", color: "text-orange-400" },
+            { icon: FaDatabase, name: "SQL & NoSQL", color: "text-green-400" },
+            { icon: FaHtml5, name: "HTML", color: "text-orange-500" },
+            { icon: FaCss3Alt, name: "CSS", color: "text-blue-500" },
+            { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-300" },
+            { icon: SiMysql, name: "MySQL", color: "text-blue-600" },
+            { icon: SiMongodb, name: "MongoDB", color: "text-green-500" },
+            { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-cyan-400" },
+            { icon: FaJsSquare, name: "JavaScript", color: "text-yellow-400" },
+            { icon: SiTypescript, name: "TypeScript", color: "text-blue-400" },
+            { icon: FaPhp, name: "PHP", color: "text-indigo-400" },
+            { icon: FaJava, name: "Java", color: "text-red-500" },
+            { icon: FaPython, name: "Python", color: "text-yellow-300" },
+            { icon: FaDocker, name: "Docker", color: "text-blue-400" },
+            { icon: SiAstro, name: "Astro.build", color: "text-purple-400" },
+            { icon: SiInertia, name: "Inertia.js", color: "text-pink-400" },
           ].map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
+              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center
+                        border border-gray-700 transition-all"
+              variants={hoverEffect}
+              whileHover="hover"
             >
-              <skill.icon className="text-5xl text-blue-400 mb-2" />
+              <skill.icon className={`text-5xl ${skill.color} mb-2`} />
               <p className="text-lg">{skill.name}</p>
             </motion.div>
           ))}
@@ -92,20 +102,21 @@ export default function Habilidades() {
             </motion.h2>
             <div className="grid grid-cols-3 gap-6">
               {[
-                { icon: FaGitAlt, name: "Git" },
-                { icon: FaGithub, name: "GitHub" },
-                { icon: DiVisualstudio, name: "VS Code" },
-                { icon: FaFigma, name: "Figma" },
-                { icon: SiPostman, name: "Postman" },
-                { icon: SiDbeaver, name: "DBeaver" },
+                { icon: FaGitAlt, name: "Git", color: "text-orange-500" },
+                { icon: FaGithub, name: "GitHub", color: "text-gray-400" },
+                { icon: DiVisualstudio, name: "VS Code", color: "text-blue-500" },
+                { icon: FaFigma, name: "Figma", color: "text-pink-400" },
+                { icon: SiPostman, name: "Postman", color: "text-orange-400" },
+                { icon: SiDbeaver, name: "DBeaver", color: "text-green-400" },
               ].map((tool, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center
+                            border border-gray-700 transition-all"
+                  variants={hoverEffect}
+                  whileHover="hover"
                 >
-                  <tool.icon className="text-5xl text-green-400 mb-2" />
+                  <tool.icon className={`text-5xl ${tool.color} mb-2`} />
                   <p className="text-lg">{tool.name}</p>
                 </motion.div>
               ))}
@@ -123,20 +134,21 @@ export default function Habilidades() {
             </motion.h2>
             <div className="grid grid-cols-3 gap-6">
               {[
-                { icon: SiJest, name: "Jest" },
-                { icon: SiTestinglibrary, name: "Testing Library" },
-                { icon: FaPhp, name: "Pest (PHP Testing)" },
-                { icon: SiCypress, name: "Cypress" },
-                { icon: SiSonarqube, name: "SonarQube" },
-                { icon: SiEslint, name: "ESLint" },
+                { icon: SiJest, name: "Jest", color: "text-red-500" },
+                { icon: SiTestinglibrary, name: "Testing Library", color: "text-orange-500" },
+                { icon: FaPhp, name: "Pest (PHP Testing)", color: "text-indigo-400" },
+                { icon: SiCypress, name: "Cypress", color: "text-green-500" },
+                { icon: SiSonarqube, name: "SonarQube", color: "text-blue-400" },
+                { icon: SiEslint, name: "ESLint", color: "text-purple-500" },
               ].map((tool, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center
+                            border border-gray-700 transition-all"
+                  variants={hoverEffect}
+                  whileHover="hover"
                 >
-                  <tool.icon className="text-5xl text-red-400 mb-2" />
+                  <tool.icon className={`text-5xl ${tool.color} mb-2`} />
                   <p className="text-lg">{tool.name}</p>
                 </motion.div>
               ))}
@@ -144,30 +156,10 @@ export default function Habilidades() {
           </div>
         </div>
 
-        <motion.h2
-          className="text-4xl font-bold text-blue-400 mt-16 mb-10"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Habilidades Personales
-        </motion.h2>
-
+        <motion.h2 className="text-4xl font-bold text-blue-400 mt-16 mb-10">Habilidades Personales</motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            "Trabajo en equipo",
-            "Comunicación efectiva",
-            "Resolución de problemas",
-            "Innovación y creatividad",
-            "Aprendizaje continuo",
-            "Responsabilidad y compromiso",
-          ].map((skill, index) => (
-            <motion.div
-              key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center text-lg font-semibold"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
+          {["Trabajo en equipo", "Comunicación efectiva", "Resolución de problemas", "Innovación y creatividad", "Aprendizaje continuo", "Responsabilidad y compromiso"].map((skill, index) => (
+            <motion.div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center text-lg font-semibold border border-gray-700 transition-all" variants={hoverEffect} whileHover="hover">
               {skill}
             </motion.div>
           ))}

@@ -57,24 +57,11 @@ export default function Contacto() {
       return;
     }
 
-    emailjs
-      .send(
-        "servicioMondelo",
-        "template_nraohnl",
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        },
-        "Nu0esWv80VTrX6FPf"
-      )
-      .then(() => {
-        alert("Mensaje enviado correctamente. 📩");
-        setIsModalOpen(false);
-        setFormData({ name: "", email: "", message: "", termsAccepted: false });
-        setErrors({});
-      })
-      .catch((error) => console.error("Error al enviar mensaje:", error));
+    console.log("Envío desactivado temporalmente.");
+
+    setIsModalOpen(false);
+    setFormData({ name: "", email: "", message: "", termsAccepted: false });
+    setErrors({});
   };
 
   return (
@@ -97,7 +84,7 @@ export default function Contacto() {
         >
           <div className="bg-gray-900 p-8 rounded-lg shadow-md text-2xl">
             <h3 className="text-4xl font-extrabold text-blue-400 uppercase tracking-wide mb-6">
-                INFORMACIÓN RÁPIDA
+              INFORMACIÓN RÁPIDA
             </h3>
             <p className="flex items-center justify-center gap-3 text-xl text-gray-300">
               <FaEnvelope className="text-red-400 text-4xl" />

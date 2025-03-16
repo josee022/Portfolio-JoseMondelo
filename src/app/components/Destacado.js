@@ -7,6 +7,7 @@ import { BsPlayCircle } from "react-icons/bs";
 import { BiSolidRightArrow, BiSolidLeftArrow } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import GestorTareas from "@/app/components/GestorTareas";
+import UIkitGenerator from "@/app/components/UIKitGenerator";
 
 const images = [
   "/image/carrusel/1welcome.png",
@@ -170,15 +171,18 @@ export default function Destacado() {
       )}
       <br />
       <section className="py-16 bg-transparent text-white text-center">
-      <h2 className="text-5xl font-extrabold text-blue-400 mb-12 uppercase tracking-wide flex items-center justify-center gap-3">
-        <span role="img" aria-label="Laptop">
-          💻
-        </span>{" "}
-        Otros Proyectos
-      </h2>
+        <h2 className="text-5xl font-extrabold text-blue-400 mb-12 uppercase tracking-wide flex items-center justify-center gap-3">
+          <span role="img" aria-label="Laptop">
+            💻
+          </span>{" "}
+          Otros Proyectos
+        </h2>
 
         <div className="flex justify-center">
           <GestorTareas />
+        </div>
+        <div className="flex justify-center">
+          <UIkitGenerator />
         </div>
       </section>
     </section>

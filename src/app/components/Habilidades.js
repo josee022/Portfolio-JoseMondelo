@@ -32,7 +32,8 @@ import {
   SiCypress,
   SiSonarqube,
 } from "react-icons/si";
-import { DiVisualstudio } from "react-icons/di";
+import { DiVisualstudio, DiDjango  } from "react-icons/di";
+import { RiNextjsFill } from "react-icons/ri";
 
 const hoverEffect = {
   hover: {
@@ -74,8 +75,8 @@ export default function Habilidades() {
             { icon: FaJava, name: "Java", color: "text-red-500" },
             { icon: FaPython, name: "Python", color: "text-yellow-300" },
             { icon: FaDocker, name: "Docker", color: "text-blue-400" },
-            { icon: SiAstro, name: "Astro.build", color: "text-purple-400" },
-            { icon: SiInertia, name: "Inertia.js", color: "text-pink-400" },
+            { icon: DiDjango, name: "Django", color: "text-purple-400" },
+            { icon: RiNextjsFill, name: "Next.js", color: "text-pink-400" },
           ].map((skill, index) => (
             <motion.div
               key={index}

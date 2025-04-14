@@ -8,6 +8,7 @@ import { BiSolidRightArrow, BiSolidLeftArrow } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import GestorTareas from "@/app/components/GestorTareas";
 import UIkitGenerator from "@/app/components/UIKitGenerator";
+import TechHub from "@/app/components/TechHub";
 
 const images = [
   "/image/carrusel/1welcome.png",
@@ -178,6 +179,9 @@ export default function Destacado() {
           Otros Proyectos
         </h2>
 
+        <div className="flex justify-center">
+          <TechHub />
+        </div>
         <div className="flex justify-center">
           <GestorTareas />
         </div>

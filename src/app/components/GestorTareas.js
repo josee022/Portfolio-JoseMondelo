@@ -55,7 +55,7 @@ const TaskManagerProject = () => {
                 🔑 Credenciales de Prueba
               </p>
               <p>
-                <strong>Usuario:</strong> prueba@gmail.com
+                <strong>Usuario:</strong> pruebas@gmail.com
               </p>
               <p>
                 <strong>Contraseña:</strong> 12345678

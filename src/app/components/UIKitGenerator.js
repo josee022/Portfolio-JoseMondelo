@@ -122,7 +122,7 @@ const UIKitGeneratorProject = () => {
             <h4 className="text-teal-400 font-bold mb-3">Enlaces del proyecto</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="https://github.com/josee022/uikit-generator"
+                href="https://github.com/josee022/UI-Kit-Generator"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-gray-700 px-5 py-3 rounded-lg hover:bg-gray-600 transition font-bold w-full justify-center"

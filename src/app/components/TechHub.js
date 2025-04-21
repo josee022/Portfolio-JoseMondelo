@@ -99,7 +99,7 @@ const TechHubProject = () => {
             className="relative rounded-lg overflow-hidden shadow-md hover:opacity-90 transition w-full max-w-[700px]"
           >
             <Image
-              src="/image/techhub.png"
+              src="/image/techub.png"
               alt="TechHub"
               width={700}
               height={450}
@@ -134,7 +134,7 @@ const TechHubProject = () => {
             <div className="flex flex-col gap-3">
               <div className="flex gap-2">
                 <a
-                  href="https://github.com/josee022/techhub-frontend"
+                  href="https://github.com/josee022/TechHub_frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gray-700 px-5 py-3 rounded-lg hover:bg-gray-600 transition font-bold flex-1 justify-center"
@@ -142,7 +142,7 @@ const TechHubProject = () => {
                   <FaGithub /> Frontend
                 </a>
                 <a
-                  href="https://github.com/josee022/techhub-backend"
+                  href="https://github.com/josee022/TechHub_backend"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gray-700 px-5 py-3 rounded-lg hover:bg-gray-600 transition font-bold flex-1 justify-center"

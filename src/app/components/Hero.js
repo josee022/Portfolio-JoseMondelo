@@ -66,7 +66,7 @@ export default function Hero() {
         </Link>
 
         <a
-          href="/docs/cvOficial.pdf"
+          href="/docs/CVJoseMondelo.pdf"
           download="cv.pdf"
           className="px-8 py-4 bg-gray-800 text-white rounded-lg text-xl font-bold hover:bg-gray-700 transition shadow-lg flex items-center gap-2"
         >

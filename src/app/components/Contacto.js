@@ -9,12 +9,12 @@ import {
   FaLinkedin,
   FaGithub,
   FaWhatsapp,
+  FaFileDownload,
+  FaUser,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 
 export default function Contacto() {
-  const neonEffect =
-    "shadow-lg shadow-blue-400 hover:shadow-blue-600 transition duration-300";
-
   const frases = [
     "¡Construyamos algo juntos!",
     "La innovación empieza con una idea.",
@@ -26,6 +26,7 @@ export default function Contacto() {
 
   const [fraseActual, setFraseActual] = useState(0);
 
+  // Cambio de frases
   useEffect(() => {
     const intervalo = setInterval(() => {
       setFraseActual((prev) => (prev + 1) % frases.length);
@@ -35,214 +36,252 @@ export default function Contacto() {
   }, [frases.length]);
 
   return (
-    <section id="contacto" className="py-20 bg-transparent text-white relative overflow-hidden">
+    <section id="contacto" className="py-16 bg-transparent text-white relative overflow-hidden">
       {/* Elementos decorativos de fondo */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[30%] left-[5%] w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[20%] right-[5%] w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
+        <div className="absolute top-[20%] left-[5%] w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[10%] right-[5%] w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-[60%] left-[40%] w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        {/* Encabezado con animación y diseño mejorado */}
+        {/* Encabezado con animación */}
         <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -50 }}
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl px-8 py-4 mb-6 border border-blue-500/20 shadow-xl">
-            <motion.span 
-              className="text-sm font-medium text-blue-400 uppercase tracking-widest mb-2 block"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              ¿Hablamos?
-            </motion.span>
-            <h2 className="text-5xl font-bold mb-4">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Contacto</span>
+          <div className="inline-block bg-purple-500/10 rounded-full px-5 py-2 mb-4">
+            <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 tracking-wide flex items-center justify-center gap-3">
+              <span className="bg-purple-500 p-2 rounded-full">
+                <FaEnvelope className="text-white text-xl" />
+              </span>
+              Contacto
             </h2>
           </div>
-          
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
           
           <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-lg text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <span className="font-semibold text-white">¿Listo para llevar tus ideas al siguiente nivel?</span>{" "}
-            <span className="text-gray-300">Estoy disponible para colaborar en proyectos innovadores y desafiantes que requieran soluciones técnicas creativas.</span>
+            ¿Tienes un proyecto interesante o una oportunidad laboral? ¡Hablemos! Estoy disponible para colaborar en soluciones digitales innovadoras.
           </motion.p>
         </motion.div>
 
-        {/* Tarjeta principal de contacto con efecto de profundidad */}
-        <motion.div
-          className="bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-sm p-10 rounded-2xl shadow-2xl max-w-5xl mx-auto border border-blue-500/20 relative overflow-hidden"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Elementos decorativos */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-          {/* Información de contacto en diseño de tarjetas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {/* Tarjeta de Email */}
-            <motion.div 
-              className="bg-gray-800/90 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-all border-t border-blue-500/30"
-              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)" }}
-            >
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-full">
-                <FaEnvelope className="text-white text-3xl" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Email</h3>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=josemondelo022@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors text-center group"
-              >
-                josemondelo022@gmail.com
-                <div className="text-sm text-blue-400 group-hover:text-blue-300 mt-1">
-                  Contactar por Email
-                </div>
-              </a>
-            </motion.div>
-
-            {/* Tarjeta de Teléfono */}
-            <motion.div 
-              className="bg-gray-800/90 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-all border-t border-green-500/30"
-              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)" }}
-            >
-              <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full">
-                <FaPhoneAlt className="text-white text-3xl" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Teléfono</h3>
-              <a
-                href="https://wa.me/34622331827"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors text-center group"
-              >
-                +34 622 33 18 27
-                <div className="text-sm text-green-400 group-hover:text-green-300 mt-1">
-                  Contactar por WhatsApp
-                </div>
-              </a>
-            </motion.div>
-
-            {/* Tarjeta de Ubicación */}
-            <motion.div 
-              className="bg-gray-800/90 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-all border-t border-yellow-500/30"
-              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)" }}
-            >
-              <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-4 rounded-full">
-                <FaMapMarkerAlt className="text-white text-3xl" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Ubicación</h3>
-              <p className="text-gray-300 text-center">
-                Sanlúcar de Barrameda<br/>
-                <span className="text-sm text-gray-400">Cádiz, España</span>
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Sección de redes sociales y frases inspiradoras */}
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-xl shadow-lg border border-blue-500/10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-              {/* Redes sociales */}
-              <div className="mt-12 grid grid-cols-2 gap-6 max-w-xs mx-auto">
-                <motion.a
-                  href="https://www.instagram.com/josee022/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-pink-600 to-purple-600 rounded-full text-white hover:shadow-lg hover:shadow-pink-500/20 transition-all border border-white/10"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
+        {/* Contenedor principal con diseño centrado */}
+        <div className="max-w-4xl mx-auto">
+          {/* Tarjeta principal de contacto */}
+          <motion.div 
+            className="bg-gradient-to-b from-gray-900/90 to-gray-950/90 rounded-2xl border border-purple-500/20 shadow-xl overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Cabecera */}
+            <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 p-5 border-b border-purple-500/20">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <span className="bg-purple-600/30 p-1.5 rounded-lg"><FaUser /></span>
+                Información de Contacto
+              </h3>
+            </div>
+            
+            {/* Contenido dividido en 2 columnas en versión desktop */}
+            <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Columna 1: Información de contacto */}
+              <div className="space-y-6">
+                {/* Email con enlace para contacto directo */}
+                <motion.div 
+                  className="flex items-start gap-4 bg-gradient-to-r from-blue-900/20 to-blue-800/10 p-4 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all"
+                  whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(59, 130, 246, 0.1)" }}
                 >
-                  <FaInstagram className="text-2xl" />
-                </motion.a>
-
-                <motion.a
-                  href="https://github.com/josee022"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full text-white hover:shadow-lg hover:shadow-gray-500/20 transition-all border border-white/10"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaGithub className="text-2xl" />
-                </motion.a>
-
-                <motion.a
-                  href="https://www.linkedin.com/in/jos%C3%A9-mondelo-%C3%A1lvarez-0868a634a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full text-white hover:shadow-lg hover:shadow-blue-500/20 transition-all border border-white/10"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaLinkedin className="text-2xl" />
-                </motion.a>
-
-                <motion.a
-                  href="https://wa.me/34644280896"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-green-600 to-green-700 rounded-full text-white hover:shadow-lg hover:shadow-green-500/20 transition-all border border-white/10"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaWhatsapp className="text-2xl" />
-                </motion.a>
-              </div>
-              
-              {/* Badge de disponibilidad */}
-              <div className="mt-10 flex justify-center">
-                <div className="bg-gray-800/80 rounded-full px-4 py-2 inline-flex items-center gap-2 border border-green-500/20 shadow-lg">
-                  <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                  <span className="text-gray-300 text-sm font-medium">Disponible para nuevos proyectos</span>
-                </div>
-              </div>
-
-              {/* Frases inspiradoras con animación */}
-              <div className="mt-12 text-center relative overflow-hidden py-8 bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-xl border border-blue-500/10">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-                
-                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-full"></div>
-                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-purple-500 to-blue-500 rounded-l-full"></div>
-                
-                <motion.div
-                  key={fraseActual}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="h-20 flex items-center justify-center px-8"
-                >
-                  <p className="text-base md:text-lg text-gray-300 italic leading-relaxed line-clamp-3 overflow-hidden">{frases[fraseActual]}</p>
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-lg shadow-lg">
+                    <FaEnvelope className="text-white text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=josemondelo022@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-blue-400 transition-colors flex items-center gap-1"
+                    >
+                      josemondelo022@gmail.com
+                      <FaExternalLinkAlt className="text-xs opacity-70" />
+                    </a>
+                    <p className="text-sm text-blue-400 mt-1">Haz clic para contactar por email</p>
+                  </div>
                 </motion.div>
                 
-                <div className="flex justify-center mt-4">
-                  <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mx-1 animate-pulse"></span>
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-500 mx-1 animate-pulse delay-100"></span>
-                  <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mx-1 animate-pulse delay-200"></span>
+                {/* Teléfono/WhatsApp con enlace para contacto directo */}
+                <motion.div 
+                  className="flex items-start gap-4 bg-gradient-to-r from-green-900/20 to-green-800/10 p-4 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-all"
+                  whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(16, 185, 129, 0.1)" }}
+                >
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-lg shadow-lg">
+                    <FaPhoneAlt className="text-white text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Teléfono</h4>
+                    <a
+                      href="https://wa.me/34622331827"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-green-400 transition-colors flex items-center gap-1"
+                    >
+                      +34 622 33 18 27
+                      <FaExternalLinkAlt className="text-xs opacity-70" />
+                    </a>
+                    <p className="text-sm text-green-400 mt-1">Haz clic para contactar por WhatsApp</p>
+                  </div>
+                </motion.div>
+                
+                {/* Ubicación */}
+                <motion.div 
+                  className="flex items-start gap-4 bg-gradient-to-r from-yellow-900/20 to-yellow-800/10 p-4 rounded-xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all"
+                  whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(245, 158, 11, 0.1)" }}
+                >
+                  <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-3 rounded-lg shadow-lg">
+                    <FaMapMarkerAlt className="text-white text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Ubicación</h4>
+                    <p className="text-gray-300">
+                      Sanlúcar de Barrameda<br/>
+                      <span className="text-sm text-gray-400">Cádiz, España</span>
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Columna 2: Redes sociales y CV */}
+              <div className="space-y-6">
+                {/* Redes sociales */}
+                <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 p-5 rounded-xl border border-blue-500/20">
+                  <h4 className="text-lg font-semibold text-white mb-4">Redes Sociales</h4>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    <motion.a
+                      href="https://www.instagram.com/josee022/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-gradient-to-r from-pink-600/20 to-purple-600/20 p-3 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all"
+                      whileHover={{ y: -3 }}
+                    >
+                      <FaInstagram className="text-pink-400 text-xl" />
+                      <span className="text-white font-medium">Instagram</span>
+                    </motion.a>
+
+                    <motion.a
+                      href="https://github.com/josee022"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-gradient-to-r from-gray-700/20 to-gray-800/20 p-3 rounded-xl border border-gray-500/20 hover:border-gray-500/40 transition-all"
+                      whileHover={{ y: -3 }}
+                    >
+                      <FaGithub className="text-white text-xl" />
+                      <span className="text-white font-medium">GitHub</span>
+                    </motion.a>
+
+                    <motion.a
+                      href="https://www.linkedin.com/in/jos%C3%A9-mondelo-%C3%A1lvarez-0868a634a/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-gradient-to-r from-blue-600/20 to-blue-700/20 p-3 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all"
+                      whileHover={{ y: -3 }}
+                    >
+                      <FaLinkedin className="text-blue-400 text-xl" />
+                      <span className="text-white font-medium">LinkedIn</span>
+                    </motion.a>
+
+                    <motion.a
+                      href="https://wa.me/34622331827"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-gradient-to-r from-green-600/20 to-green-700/20 p-3 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-all"
+                      whileHover={{ y: -3 }}
+                    >
+                      <FaWhatsapp className="text-green-400 text-xl" />
+                      <span className="text-white font-medium">WhatsApp</span>
+                    </motion.a>
+                  </div>
+                </div>
+                
+                {/* CV Descarga - llamativo */}
+                <motion.div
+                  className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 p-5 rounded-xl border border-purple-500/20"
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <h4 className="text-lg font-semibold text-white mb-3">Descarga mi CV</h4>
+                  <p className="text-gray-300 text-sm mb-4">Accede a mi currículum completo con toda mi formación y experiencia profesional</p>
+                  
+                  <a
+                    href="/docs/CVJoseMondelo.pdf"
+                    download="cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-all font-medium text-center flex items-center justify-center gap-2"
+                  >
+                    <FaFileDownload className="text-lg" />
+                    Descargar CV
+                  </a>
+                </motion.div>
+                
+                {/* Indicador de disponibilidad */}
+                <div className="bg-gradient-to-r from-green-600/10 to-green-600/20 rounded-xl p-4 border border-green-500/20">
+                  <div className="flex items-center gap-3">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span className="text-green-400 font-medium">Disponible para nuevos proyectos</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            
+            {/* Frase inspiradora rotativa */}
+            <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 border-t border-blue-500/10">
+              <motion.div
+                key={fraseActual}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center justify-center"
+              >
+                <p className="text-xl text-gray-300 italic text-center">{frases[fraseActual]}</p>
+              </motion.div>
+              
+              <div className="flex justify-center mt-3">
+                {frases.map((_, index) => (
+                  <span 
+                    key={index} 
+                    className={`inline-block w-2 h-2 rounded-full mx-1 ${
+                      index === fraseActual ? 'bg-blue-500' : 'bg-gray-600'
+                    }`}
+                  ></span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
           
           {/* Mensaje final */}
-          <div className="mt-10 text-center">
-            <p className="text-gray-400 text-lg">
+          <motion.div 
+            className="mt-8 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <p className="text-gray-400">
               Disponible para proyectos freelance y oportunidades laborales
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

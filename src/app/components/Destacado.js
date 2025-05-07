@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { BsPlayCircle } from "react-icons/bs";
 import { BiSolidRightArrow, BiSolidLeftArrow } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
@@ -33,9 +33,18 @@ const images = [
   "/image/carrusel/22graficasAdmin.png",
 ];
 
-export default function Destacado() { // Mantenemos el nombre de la función pero cambiamos el ID y contenido
+export default function Destacado() {
+  // Estados para el carrusel del proyecto principal
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Estados para expandir/colapsar detalles de cada proyecto
+  const [expandedProjects, setExpandedProjects] = useState({
+    CineFinder: false,
+    TechHub: false,
+    GestorTareas: false,
+    UIkitGenerator: false
+  });
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -47,6 +56,23 @@ export default function Destacado() { // Mantenemos el nombre de la función per
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+  };
+  
+  // Función para cambiar a la sección del proyecto
+  const handleTabChange = (tabName) => {
+    // Ahora simplemente hace scroll a la sección del proyecto
+    const element = document.getElementById(tabName);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
+  // Función para expandir/colapsar detalles de un proyecto específico
+  const toggleDetails = (projectName) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [projectName]: !prev[projectName]
+    }));
   };
 
   return (
@@ -264,85 +290,422 @@ export default function Destacado() { // Mantenemos el nombre de la función per
             </p>
           </motion.div>
 
-          {/* Navegación de proyectos con pestañas */}
-          <div className="flex justify-center mb-12 overflow-x-auto pb-2 hide-scrollbar">
-            <div className="flex space-x-2 bg-gray-800/50 p-1 rounded-full">
-              <motion.button 
-                className="px-6 py-2 rounded-full bg-gray-700/50 text-gray-300 font-medium text-sm hover:bg-gray-700 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                CineFinder
-              </motion.button>
-              <motion.button 
-                className="px-6 py-2 rounded-full bg-gray-700/50 text-gray-300 font-medium text-sm hover:bg-gray-700 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                TechHub
-              </motion.button>
-              <motion.button 
-                className="px-6 py-2 rounded-full bg-gray-700/50 text-gray-300 font-medium text-sm hover:bg-gray-700 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Gestor de Tareas
-              </motion.button>
-              <motion.button 
-                className="px-6 py-2 rounded-full bg-gray-700/50 text-gray-300 font-medium text-sm hover:bg-gray-700 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                UI Kit Generator
-              </motion.button>
             </div>
           </div>
 
-          {/* Contenedor de proyectos con efecto de profundidad */}
-          <div className="space-y-16">
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="flex justify-center">
-                <CineFinder />
-              </div>
-            </motion.div>
+          {/* Contenedor de proyectos - todos visibles */}
+          <div className="space-y-10 mb-10">
+            {/* Proyecto CineFinder */}
+            <div id="CineFinder">(
+              <motion.div 
+                key="cinefinder"
+                className="bg-gradient-to-b from-gray-900/80 to-gray-950/80 rounded-xl border border-blue-500/20 shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                layout
+              >
+                {/* Resumen del proyecto - siempre visible */}
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
+                      <Image
+                        src="/image/cinefinder.png"
+                        alt="CineFinder - Plataforma de cine"
+                        width={700}
+                        height={450}
+                        className="w-full h-auto rounded-lg transition-all duration-300 hover:scale-105"
+                      />
+                    </div>
+                    
+                    <div className="w-full md:w-2/3 text-left space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-3xl font-bold text-blue-400">CineFinder</h3>
+                        <span className="bg-red-600 text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wider">Angular 19</span>
+                      </div>
+                      
+                      <p className="text-gray-300 text-lg">
+                        Plataforma completa de cine con diseño premium que permite descubrir y explorar películas, series y todo el universo cinematográfico con una interfaz moderna y totalmente responsive.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">Angular 19</span>
+                        <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">TheMovieDB API</span>
+                        <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">Material UI</span>
+                        <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">SCSS</span>
+                        <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">Framer Motion</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center pt-2">
+                        <div className="flex gap-3">
+                          <a 
+                            href="https://github.com/josee022/CineFinder" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub
+                          </a>
+                          <a 
+                            href="https://cinefinderweb.netlify.app" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-all"
+                          >
+                            URL Project
+                          </a>
+                        </div>
+                        
+                        <button 
+                          onClick={toggleDetails}
+                          className="flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                        >
+                          {expandedDetails ? (
+                            <>
+                              <span>Ver menos</span>
+                              <FaChevronUp />
+                            </>
+                          ) : (
+                            <>
+                              <span>Ver más</span>
+                              <FaChevronDown />
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                {/* Detalles expandibles */}
+                {expandedDetails && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 md:px-8 pb-8"
+                  >
+                    <div className="border-t border-gray-800 pt-6 mt-2">
+                      <CineFinder />
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            </div>
             
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="flex justify-center">
-                <TechHub />
-              </div>
-            </motion.div>
+            {/* Proyecto TechHub */}
+            <div id="TechHub">(
+              <motion.div 
+                key="techhub"
+                className="bg-gradient-to-b from-gray-900/80 to-gray-950/80 rounded-xl border border-purple-500/20 shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                layout
+              >
+                {/* Resumen del proyecto - siempre visible */}
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
+                      <Image
+                        src="/image/techhub.png"
+                        alt="TechHub - Plataforma IoT"
+                        width={700}
+                        height={450}
+                        className="w-full h-auto rounded-lg transition-all duration-300 hover:scale-105"
+                      />
+                    </div>
+                    
+                    <div className="w-full md:w-2/3 text-left space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-3xl font-bold text-purple-400">TechHub</h3>
+                        <span className="bg-purple-600 text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wider">Full Stack</span>
+                      </div>
+                      
+                      <p className="text-gray-300 text-lg">
+                        Plataforma de gestión IoT que permite supervisar y controlar dispositivos conectados a Internet, visualizar datos en tiempo real y crear automatizaciones personalizadas.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="bg-gray-800 text-purple-400 px-3 py-1 rounded-full text-sm">React+Vite</span>
+                        <span className="bg-gray-800 text-purple-400 px-3 py-1 rounded-full text-sm">Django REST</span>
+                        <span className="bg-gray-800 text-purple-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        <span className="bg-gray-800 text-purple-400 px-3 py-1 rounded-full text-sm">WebSockets</span>
+                        <span className="bg-gray-800 text-purple-400 px-3 py-1 rounded-full text-sm">Chart.js</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center pt-2">
+                        <div className="flex gap-3">
+                          <a 
+                            href="https://github.com/josee022/TechHub_frontend" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub Front
+                          </a>
+                          <a 
+                            href="https://github.com/josee022/TechHub_backend" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub Back
+                          </a>
+                          <a 
+                            href="https://techhubjm.netlify.app/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-purple-600 rounded-lg flex items-center gap-2 hover:bg-purple-700 transition-all"
+                          >
+                            URL Project
+                          </a>
+                        </div>
+                        
+                        <button 
+                          onClick={toggleDetails}
+                          className="flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                        >
+                          {expandedDetails ? (
+                            <>
+                              <span>Ver menos</span>
+                              <FaChevronUp />
+                            </>
+                          ) : (
+                            <>
+                              <span>Ver más</span>
+                              <FaChevronDown />
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                {/* Detalles expandibles */}
+                {expandedDetails && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 md:px-8 pb-8"
+                  >
+                    <div className="border-t border-gray-800 pt-6 mt-2">
+                      <TechHub />
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            </div>
             
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div className="flex justify-center">
-                <GestorTareas />
-              </div>
-            </motion.div>
+            {/* Proyecto Gestor de Tareas */}
+            <div id="GestorTareas">(
+              <motion.div 
+                key="gestortareas"
+                className="bg-gradient-to-b from-gray-900/80 to-gray-950/80 rounded-xl border border-green-500/20 shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                layout
+              >
+                {/* Resumen del proyecto - siempre visible */}
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
+                      <Image
+                        src="/image/gestorTareas.png"
+                        alt="Gestor de Tareas"
+                        width={700}
+                        height={450}
+                        className="w-full h-auto rounded-lg transition-all duration-300 hover:scale-105"
+                      />
+                    </div>
+                    
+                    <div className="w-full md:w-2/3 text-left space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-3xl font-bold text-green-400">Gestor de Tareas</h3>
+                        <span className="bg-green-600 text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wider">Full Stack</span>
+                      </div>
+                      
+                      <p className="text-gray-300 text-lg">
+                        Aplicación completa de organización personal que permite gestionar tareas, proyectos y hábitos con un diseño intuitivo y funcionalidades avanzadas de productividad.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="bg-gray-800 text-green-400 px-3 py-1 rounded-full text-sm">React</span>
+                        <span className="bg-gray-800 text-green-400 px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span className="bg-gray-800 text-green-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        <span className="bg-gray-800 text-green-400 px-3 py-1 rounded-full text-sm">Redux</span>
+                        <span className="bg-gray-800 text-green-400 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center pt-2">
+                        <div className="flex gap-3">
+                          <a 
+                            href="https://github.com/josee022/gestor-tareas-frontend" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub Front
+                          </a>
+                          <a 
+                            href="https://github.com/josee022/gestor-tareas-backend" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub Back
+                          </a>
+                          <a 
+                            href="https://gestor-tareas-beige.vercel.app/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-green-600 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-all"
+                          >
+                            URL Project
+                          </a>
+                        </div>
+                        
+                        <button 
+                          onClick={toggleDetails}
+                          className="flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                        >
+                          {expandedDetails ? (
+                            <>
+                              <span>Ver menos</span>
+                              <FaChevronUp />
+                            </>
+                          ) : (
+                            <>
+                              <span>Ver más</span>
+                              <FaChevronDown />
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                {/* Detalles expandibles */}
+                {expandedDetails && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 md:px-8 pb-8"
+                  >
+                    <div className="border-t border-gray-800 pt-6 mt-2">
+                      <GestorTareas />
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            </div>
             
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div className="flex justify-center">
-                <UIkitGenerator />
-              </div>
-            </motion.div>
+            {/* Proyecto UI Kit Generator */}
+            <div id="UIkitGenerator">(
+              <motion.div 
+                key="uikitgenerator"
+                className="bg-gradient-to-b from-gray-900/80 to-gray-950/80 rounded-xl border border-amber-500/20 shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                layout
+              >
+                {/* Resumen del proyecto - siempre visible */}
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
+                      <Image
+                        src="/image/uikitgenerator.png"
+                        alt="UI Kit Generator"
+                        width={700}
+                        height={450}
+                        className="w-full h-auto rounded-lg transition-all duration-300 hover:scale-105"
+                      />
+                    </div>
+                    
+                    <div className="w-full md:w-2/3 text-left space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-3xl font-bold text-amber-400">UI Kit Generator</h3>
+                        <span className="bg-amber-600 text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wider">Frontend</span>
+                      </div>
+                      
+                      <p className="text-gray-300 text-lg">
+                        Herramienta de diseño que permite generar componentes UI personalizados y exportarlos como código reutilizable para diferentes frameworks y bibliotecas de diseño.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="bg-gray-800 text-amber-400 px-3 py-1 rounded-full text-sm">Next.js</span>
+                        <span className="bg-gray-800 text-amber-400 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        <span className="bg-gray-800 text-amber-400 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                        <span className="bg-gray-800 text-amber-400 px-3 py-1 rounded-full text-sm">Framer Motion</span>
+                        <span className="bg-gray-800 text-amber-400 px-3 py-1 rounded-full text-sm">Figma API</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center pt-2">
+                        <div className="flex gap-3">
+                          <a 
+                            href="https://github.com/josee022/UI-Kit-Generator" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                          >
+                            <FaGithub /> GitHub
+                          </a>
+                          <a 
+                            href="https://ui-kit-generator.vercel.app/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-amber-600 rounded-lg flex items-center gap-2 hover:bg-amber-700 transition-all"
+                          >
+                            URL Project
+                          </a>
+                        </div>
+                        
+                        <button 
+                          onClick={toggleDetails}
+                          className="flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                        >
+                          {expandedDetails ? (
+                            <>
+                              <span>Ver menos</span>
+                              <FaChevronUp />
+                            </>
+                          ) : (
+                            <>
+                              <span>Ver más</span>
+                              <FaChevronDown />
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                {/* Detalles expandibles */}
+                {expandedDetails && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 md:px-8 pb-8"
+                  >
+                    <div className="border-t border-gray-800 pt-6 mt-2">
+                      <UIkitGenerator />
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            )}
           </div>
         </div>
       </section>

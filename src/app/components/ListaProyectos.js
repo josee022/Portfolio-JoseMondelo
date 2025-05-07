@@ -194,7 +194,7 @@ export default function ListaProyectos({ expandedProjects, toggleDetails }) {
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
                     <Image
-                      src="/image/techhub.png"
+                      src="/image/techub.png"
                       alt="TechHub - Plataforma IoT"
                       width={700}
                       height={450}

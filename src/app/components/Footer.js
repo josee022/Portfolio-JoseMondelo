@@ -59,11 +59,11 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col items-center gap-4">
-              {/* Primera fila: Inicio, Sobre Mí, Habilidades */}
+              {/* Primera fila: Inicio, Experiencia, Habilidades */}
               <div className="flex justify-center gap-4 text-gray-400 text-base">
                 {[
                   "Inicio",
-                  "Sobre Mí",
+                  "Experiencia",
                   "Habilidades",
                 ].map((item, index) => (
                   <motion.div
@@ -85,10 +85,11 @@ export default function Footer() {
                 ))}
               </div>
               
-              {/* Segunda fila: Proyectos, Contacto */}
+              {/* Segunda fila: Proyectos, Sobre Mí, Contacto */}
               <div className="flex justify-center gap-4 text-gray-400 text-base">
                 {[
                   "Proyectos",
+                  "Sobre Mí",
                   "Contacto",
                 ].map((item, index) => (
                   <motion.div

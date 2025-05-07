@@ -1,20 +1,22 @@
 import Hero from "./components/Hero";
-import SobreMiProfesional from "./components/SobreMiProfesional";
-import SobreMiPersonal from "./components/SobreMiPersonal";
+import Experiencia from "./components/Experiencia";
+import Educacion from "./components/Educacion";
+import ProyectosDestacados from "./components/ProyectosDestacados";
 import Habilidades from "./components/Habilidades";
-import Footer from "./components/Footer";
+import SobreMi from "./components/SobreMi";
 import Contacto from "./components/Contacto";
-import Destacado from "./components/Destacado";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <SobreMiProfesional />
-      <SobreMiPersonal />
+      <Experiencia />
+      <Educacion />
+      <ProyectosDestacados />
       <Habilidades />
-      <Destacado />
+      <SobreMi />
       <Contacto />
       <Footer />
     </main>

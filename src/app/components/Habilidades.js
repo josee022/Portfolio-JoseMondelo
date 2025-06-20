@@ -121,6 +121,7 @@ export default function Habilidades() {
         { name: "Express", icon: SiExpress, level: 80, color: "text-gray-400" },
         { name: "NestJS", icon: SiNestjs, level: 75, color: "text-red-500" },
         { name: "Java", icon: FaJava, level: 75, color: "text-red-500" },
+{ name: "Spring Boot", icon: FaJava, level: 65, color: "text-green-600" },
         { name: "Python", icon: FaPython, level: 70, color: "text-yellow-300" },
         { name: "Django", icon: DiDjango, level: 65, color: "text-green-600" },
         { name: "GraphQL", icon: SiGraphql, level: 70, color: "text-pink-500" },
@@ -134,9 +135,11 @@ export default function Habilidades() {
       color: "from-yellow-600/20 to-yellow-700/20 border-yellow-500/20",
       skills: [
         { name: "PostgreSQL", icon: SiPostgresql, level: 85, color: "text-blue-400" },
-        { name: "MySQL", icon: SiMysql, level: 90, color: "text-blue-600" },
-        { name: "MongoDB", icon: SiMongodb, level: 80, color: "text-green-500" },
-        { name: "Firebase", icon: SiFirebase, level: 75, color: "text-yellow-500" },
+{ name: "MySQL", icon: SiMysql, level: 90, color: "text-blue-600" },
+{ name: "MongoDB", icon: SiMongodb, level: 80, color: "text-green-500" },
+{ name: "Firestore (Firebase)", icon: SiFirebase, level: 75, color: "text-yellow-500" },
+{ name: "Realtime Database (Firebase)", icon: SiFirebase, level: 70, color: "text-yellow-400" },
+        
       ],
     },
     {
@@ -149,7 +152,8 @@ export default function Habilidades() {
         { name: "AWS", icon: SiAmazonaws, level: 80, color: "text-yellow-500" },
         { name: "Azure", icon: SiMicrosoftazure, level: 75, color: "text-blue-500" },
         { name: "Google Cloud", icon: SiGooglecloud, level: 70, color: "text-red-400" },
-        { name: "Vercel", icon: SiVercel, level: 85, color: "text-white" },
+{ name: "Firebase (BaaS)", icon: SiFirebase, level: 75, color: "text-yellow-500" },
+{ name: "Vercel", icon: SiVercel, level: 85, color: "text-white" },
         { name: "Netlify", icon: SiNetlify, level: 80, color: "text-teal-400" },
         { name: "Digital Ocean", icon: SiDigitalocean, level: 75, color: "text-blue-500" },
         { name: "CI/CD", icon: SiJenkins, level: 80, color: "text-red-500" },

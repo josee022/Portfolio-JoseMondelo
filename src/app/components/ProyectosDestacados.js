@@ -12,7 +12,7 @@ import TechHub from "@/app/components/TechHub";
 import CineFinder from "@/app/components/CineFinder";
 import ProyectoDestacado from "@/app/components/ProyectoDestacado";
 import ListaProyectos from "@/app/components/ListaProyectos";
-import ProyectosEnDesarrollo from "@/app/components/ProyectosEnDesarrollo";
+// import ProyectosEnDesarrollo from "@/app/components/ProyectosEnDesarrollo";
 
 export default function ProyectosDestacados() {
   // Estados para el carrusel del proyecto principal
@@ -84,8 +84,8 @@ export default function ProyectosDestacados() {
           toggleDetails={toggleDetails}
         />
         
-        {/* Proyectos en Desarrollo */}
-        <ProyectosEnDesarrollo />
+        {/* Proyectos en Desarrollo
+        <ProyectosEnDesarrollo /> */}
       </div>
     </section>
   );

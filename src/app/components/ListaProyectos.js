@@ -6,6 +6,7 @@ import GestorTareas from "@/app/components/GestorTareas";
 import UIkitGenerator from "@/app/components/UIKitGenerator";
 import TechHub from "@/app/components/TechHub";
 import CineFinder from "@/app/components/CineFinder";
+import EnglishLearnedHub from "@/app/components/EnglishLearnedHub";
 
 export default function ListaProyectos({ expandedProjects, toggleDetails }) {
   return (
@@ -62,6 +63,13 @@ export default function ListaProyectos({ expandedProjects, toggleDetails }) {
             >
               <span className="w-3 h-3 rounded-full bg-amber-500"></span>
               UI Kit Generator
+            </a>
+            <a 
+              href="#EnglishLearnedHub"
+              className="px-5 py-3 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-lg border border-blue-400/30 hover:bg-blue-400/30 transition-all flex items-center gap-2 text-blue-300 font-medium"
+            >
+              <span className="w-3 h-3 rounded-full bg-blue-400"></span>
+              EnglishLearnedHub
             </a>
           </div>
         </motion.div>
@@ -527,6 +535,110 @@ export default function ListaProyectos({ expandedProjects, toggleDetails }) {
               </motion.div>
             </motion.div>
           </div>
+        {/* Proyecto EnglishLearnedHub */}
+        <div id="EnglishLearnedHub">
+          <motion.div 
+            key="englishlearnedhub"
+            className="bg-gradient-to-b from-gray-900/80 to-gray-950/80 rounded-xl border border-blue-500/20 shadow-xl overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            layout
+          >
+            {/* Resumen del proyecto - siempre visible */}
+            <div className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/image/englishProyecto.png"
+                    alt="EnglishLearnedHub - Plataforma de inglés"
+                    width={700}
+                    height={450}
+                    className="w-full h-auto rounded-lg transition-all duration-300 hover:scale-105"
+                  />
+                </div>
+                <div className="w-full md:w-2/3 text-left space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className="text-3xl font-bold text-blue-400">EnglishLearnedHub</h3>
+                    <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wider">React 19 + TypeScript</span>
+                  </div>
+                  <p className="text-gray-300 text-lg">
+                    Plataforma web para aprender y reforzar inglés de forma lógica, interactiva y totalmente personalizada. Incluye dashboard, gestor de vocabulario, flashcards, zona de gramática, juegos y más.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">React 19</span>
+                    <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                    <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">Vite</span>
+                    <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                    <span className="bg-gray-800 text-blue-400 px-3 py-1 rounded-full text-sm">Firebase</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-2">
+                    <div className="flex gap-3">
+                      <a 
+                        href="https://github.com/josee022/EnglishLearnedHub" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-all"
+                      >
+                        <FaGithub /> GitHub
+                      </a>
+                      <a 
+                        href="https://english-learned-hub.web.app" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-all"
+                      >
+                        URL Project
+                      </a>
+                    </div>
+                    <motion.button 
+                      onClick={() => toggleDetails('EnglishLearnedHub')}
+                      className="flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {expandedProjects.EnglishLearnedHub ? (
+                        <>
+                          <span>Ver menos</span>
+                          <FaChevronUp />
+                        </>
+                      ) : (
+                        <>
+                          <span>Ver más</span>
+                          <FaChevronDown />
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Detalles expandibles */}
+            <motion.div 
+              initial={false}
+              animate={{
+                height: expandedProjects.EnglishLearnedHub ? 'auto' : 0,
+                opacity: expandedProjects.EnglishLearnedHub ? 1 : 0
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+                opacity: { duration: 0.2 }
+              }}
+              className="px-6 md:px-8 overflow-hidden"
+            >
+              <motion.div 
+                initial={{ y: 20 }}
+                animate={{ y: expandedProjects.EnglishLearnedHub ? 0 : 20 }}
+                transition={{ delay: 0.1 }}
+                className="border-t border-gray-800 pt-6 mt-2 pb-8"
+              >
+                <EnglishLearnedHub />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
         </div>
       </div>
     </section>

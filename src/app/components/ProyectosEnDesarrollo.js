@@ -256,7 +256,7 @@ export default function ProyectosEnDesarrollo() {
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-teal-400 font-bold">•</span>
-                              <span>Sistema de notas personales para cada palabra o expresión</span>
+                              <span>Sistema de notas personales para cada contenido</span>
                             </li>
                           </ul>
                         </div>
@@ -266,20 +266,20 @@ export default function ProyectosEnDesarrollo() {
                             <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 p-2 rounded-lg">
                               <MdStyle className="text-white text-xl" />
                             </div>
-                            <h4 className="text-xl font-semibold text-indigo-400">Sistema de Flashcards</h4>
+                            <h4 className="text-xl font-semibold text-indigo-400">Sistema de Organización</h4>
                           </div>
                           <ul className="space-y-2 text-gray-300">
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>
-                              <span>Método de aprendizaje con tarjetas interactivas personalizadas</span>
+                              <span>Método de organización con carpetas y categorías personalizadas</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>
-                              <span>Sistema SRS (Spaced Repetition System) para optimizar el aprendizaje</span>
+                              <span>Sistema de etiquetas para contenido específico</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>
-                              <span>Puntuación de conocimiento que se adapta a tus aciertos y fallos</span>
+                              <span>Puntuación de contenido que se adapta a tus necesidades</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>
@@ -296,20 +296,20 @@ export default function ProyectosEnDesarrollo() {
                             <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-2 rounded-lg">
                               <MdQuiz className="text-white text-xl" />
                             </div>
-                            <h4 className="text-xl font-semibold text-teal-400">Sistema de Quizzes</h4>
+                            <h4 className="text-xl font-semibold text-teal-400">Sistema de Evaluación</h4>
                           </div>
                           <ul className="space-y-2 text-gray-300">
                             <li className="flex items-start gap-2">
                               <span className="text-teal-400 font-bold">•</span>
-                              <span>Diversos tipos de ejercicios: opción múltiple, completar, traducir</span>
+                              <span>Diversos tipos de evaluaciones: opción múltiple, completar, describir</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-teal-400 font-bold">•</span>
-                              <span>Niveles progresivos (A1, A2, B1, B2, C1) con dificultad adaptativa</span>
+                              <span>Niveles progresivos con dificultad adaptativa</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-teal-400 font-bold">•</span>
-                              <span>Ejercicios de rellenar párrafos para contextualización</span>
+                              <span>Evaluaciones de rellenar párrafos para contextualización</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-teal-400 font-bold">•</span>
@@ -332,7 +332,7 @@ export default function ProyectosEnDesarrollo() {
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>
-                              <span>Gráficos de evolución del vocabulario aprendido con el tiempo</span>
+                              <span>Gráficos de evolución del contenido aprendido con el tiempo</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-indigo-400 font-bold">•</span>

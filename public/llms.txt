@@ -18,7 +18,7 @@
 ## Highlights
 
 - Migrated the data model from one centre per user to many centres per user, with per-co-admin permissions.
-- Direct S3 uploads with presigned URLs, CloudFront delivery with expiring signed URLs, and native downloads on web, Android and iOS that replaced an unauthenticated server proxy.
+- Direct S3 uploads with presigned URLs, CloudFront delivery with expiring signed URLs, and native downloads on web, Android and iOS, always behind authentication.
 - Real-time messaging with server-side scheduled sends and multi-device push notifications.
 - Payments: SEPA direct debit files for families and invoicing to centres through the Holded API. Stripe and Fiskaly integrations prepared.
 - Access control with dynamic QR codes validated on the server, and biometric sign-in (Face ID, fingerprint).

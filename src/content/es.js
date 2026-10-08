@@ -38,8 +38,8 @@ const es = {
   },
 
   knc: {
-    label: "Proyecto principal",
-    period: "Julio de 2025 a hoy",
+    label: "Mi trabajo como responsable técnico en Visasur Sistemas",
+    period: "julio de 2025 a hoy",
     title: "KNC: una plataforma para centros y familias",
     intro:
       "KNC conecta escuelas infantiles, residencias y clubes deportivos con las familias: agenda diaria, mensajería, fotos, documentos, control de accesos, fichaje y cobros. Una sola base de código Flutter para web, Android e iOS, y yo soy quien la lleva.",
@@ -95,7 +95,7 @@ const es = {
           "Subida directa a AWS S3 con URL prefirmada, compresión en el propio dispositivo y entrega por CloudFront con enlaces que caducan. Un visor tipo galería con zoom y vídeo.",
         decision:
           "Descarga nativa en cada plataforma: MediaStore en Android 10 o superior, Fotos y Archivos en iOS, Blob en web y el menú de compartir como plan B en Android antiguo.",
-        result: "Elimina un proxy de servidor que servía ficheros sin autenticación.",
+        result: "Cada foto y cada vídeo se sirve siempre con acceso autenticado y enlaces que caducan, y se descarga de forma nativa en las tres plataformas.",
       },
       {
         id: "accesos",
@@ -317,7 +317,7 @@ const es = {
     kncPoints: [
       "Gestiono el <b>ciclo completo de publicación</b>: pruebas en TestFlight y Google Play, y salida a producción en App Store Connect y Google Play Console.",
       "Rediseñé el modelo de datos <b>de un centro por usuario a varios centros por usuario</b>, con permisos por co-administrador, sobre Clean Architecture + MVVM.",
-      "Diseñé la gestión de fotos y vídeos a escala con <b>subida directa a S3 y entrega por CloudFront con enlaces que caducan</b>, y la descarga nativa en web, Android e iOS, eliminando un proxy de servidor sin autenticación.",
+      "Diseñé la gestión de fotos y vídeos a escala con <b>subida directa a S3 y entrega por CloudFront con enlaces que caducan</b>, y la descarga nativa en web, Android e iOS, con acceso siempre autenticado.",
       "Implementé los <b>cobros a familias con remesas SEPA</b> y la <b>facturación a centros a través de la API de Holded</b>; dejé preparadas las integraciones de Stripe y Fiskaly.",
       "Construí la mensajería en tiempo real con envíos programados, el <b>control de accesos con QR dinámico</b> validado en servidor y el inicio de sesión biométrico con Face ID y huella.",
       "Creé los <b>tours comerciales en 3D con Three.js</b> para los tres tipos de centro y mantengo los datos de producción con más de 100 scripts de auditoría y migración.",

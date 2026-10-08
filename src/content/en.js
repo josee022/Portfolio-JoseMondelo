@@ -38,7 +38,7 @@ const en = {
   },
 
   knc: {
-    label: "Main project",
+    label: "My work as technical lead at Visasur Sistemas",
     period: "July 2025 to today",
     title: "KNC: one platform for centres and families",
     intro:
@@ -95,7 +95,7 @@ const en = {
           "Direct uploads to AWS S3 with presigned URLs, compression on the device, and delivery through CloudFront with expiring links. A gallery-style viewer with zoom and video.",
         decision:
           "Native downloads on every platform: MediaStore on Android 10 and later, Photos and Files on iOS, Blob on the web, and the share sheet as a fallback on older Android.",
-        result: "Removed a server proxy that served files without authentication.",
+        result: "Every photo and video is always served behind authentication with expiring links, and downloads natively on all three platforms.",
       },
       {
         id: "accesos",
@@ -317,7 +317,7 @@ const en = {
     kncPoints: [
       "Own the <b>full release cycle</b>: TestFlight and Google Play testing through to production on App Store Connect and Google Play Console.",
       "Redesigned the data model <b>from one centre per user to many centres per user</b>, with per-co-admin permissions, on Clean Architecture + MVVM.",
-      "Designed photo and video handling at scale with <b>direct S3 uploads and CloudFront delivery through expiring signed URLs</b>, plus native downloads on web, Android and iOS, removing an unauthenticated server proxy.",
+      "Designed photo and video handling at scale with <b>direct S3 uploads and CloudFront delivery through expiring signed URLs</b>, plus native downloads on web, Android and iOS, with access always authenticated.",
       "Built <b>family payments with SEPA direct debits</b> and <b>centre invoicing through the Holded API</b>; prepared the Stripe and Fiskaly integrations.",
       "Built real-time messaging with scheduled sends, <b>access control with server-validated dynamic QR codes</b> and biometric sign-in with Face ID and fingerprint.",
       "Created the <b>3D sales tours in Three.js</b> for the three types of centre, and keep production data healthy with 100+ audit and migration scripts.",

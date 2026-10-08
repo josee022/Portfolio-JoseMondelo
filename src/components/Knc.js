@@ -55,7 +55,7 @@ export default function Knc({ t }) {
           <div className="max-w-3xl">
             <p className="meta flex items-center gap-2">
               <span aria-hidden="true" className="inline-block size-2.5 rounded-full bg-knc" />
-              {k.label}, {k.period.toLowerCase()}
+              {k.label}, {k.period}
             </p>
             <h2 id="knc-title" className="mt-4 font-display text-[2.5rem] font-bold leading-[1.02] tracking-[-0.035em] text-ink text-balance sm:text-[3.4rem] lg:text-[4rem]">
               {k.title}

@@ -1,61 +1,261 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Modo oscuro controlado por data-theme en <html> (lo fija el script de layout). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --primary: #3b82f6;
-  --primary-light: #60a5fa;
-  --primary-dark: #2563eb;
-  --secondary: #8b5cf6;
-  --secondary-light: #a78bfa;
-  --secondary-dark: #7c3aed;
+  --bg: #f4f6f6;
+  --surface: #ffffff;
+  --surface-2: #efefeb;
+  --ink: #0e1214;
+  --ink-2: #394147;
+  --muted: #646d74;
+  --line: rgb(14 18 20 / 0.09);
+  --line-strong: rgb(14 18 20 / 0.16);
+  --accent: #0d5c63;
+  --accent-2: #12808a;
+  --accent-soft: rgb(13 92 99 / 0.08);
+  --on-accent: #ffffff;
+  --knc: #f6c945;
+  --knc-soft: rgb(246 201 69 / 0.18);
+  --live: #157347;
+  --paused: #8a5a00;
+  --shadow: 0 1px 2px rgb(14 18 20 / 0.04), 0 12px 32px -12px rgb(14 18 20 / 0.12);
+  --glow: rgb(13 92 99 / 0.18);
+  color-scheme: light;
 }
 
-@layer utilities {
-  .bg-radial-gradient {
-    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+[data-theme="dark"] {
+  --bg: #0b0d0e;
+  --surface: #111315;
+  --surface-2: #171a1c;
+  --ink: #f1f3f4;
+  --ink-2: #c4cacf;
+  --muted: #8c959c;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.15);
+  --accent: #5fc9c3;
+  --accent-2: #8fe0da;
+  --accent-soft: rgb(95 201 195 / 0.1);
+  --on-accent: #062a2d;
+  --knc: #f6c945;
+  --knc-soft: rgb(246 201 69 / 0.12);
+  --live: #4cc38a;
+  --paused: #e0b44c;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 20px 40px -16px rgb(0 0 0 / 0.6);
+  --glow: rgb(95 201 195 / 0.16);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-knc: var(--knc);
+  --color-knc-soft: var(--knc-soft);
+  --color-live: var(--live);
+  --color-paused: var(--paused);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --shadow-soft: var(--shadow);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400;
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
-  
-  .border-gradient {
-    border-image: linear-gradient(to right, var(--primary), var(--secondary)) 1;
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+  .meta {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  /* Rejilla de puntos muy suave para fondos de sección */
+  .bg-grid {
+    background-image: radial-gradient(var(--line-strong) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  overflow-x: hidden;
+/* Línea del diagrama de arquitectura: un "pulso" que recorre la conexión */
+@keyframes flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -48px;
+  }
+}
+@keyframes flow-x {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -48px 0;
+  }
+}
+.flow-y {
+  background-image: linear-gradient(to bottom, var(--accent) 40%, transparent 0);
+  background-size: 2px 12px;
+  animation: flow 1.6s linear infinite;
+}
+.flow-x {
+  background-image: linear-gradient(to right, var(--accent) 40%, transparent 0);
+  background-size: 12px 2px;
+  animation: flow-x 1.6s linear infinite;
 }
 
-/* Estilos para scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
 }
 
-::-webkit-scrollbar-track {
-  background: #111827;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 4px;
+/* CV imprimible */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #60a5fa;
+/* Entrada orquestada del hero: un único momento al cargar. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes device-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(-2deg) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 60ms);
+}
+/* El titular y la intro solo se desplazan: siempre visibles para no retrasar el LCP. */
+@keyframes rise-move {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: none;
+  }
+}
+.rise-move {
+  animation: rise-move 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 60ms);
+}
+.device-in {
+  animation: device-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
 }
 
-[data-next-route-indicator] {
-  display: none;
+/* Respuestas a acciones del usuario: abrir el menú y cambiar de proyecto. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fade-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 30ms);
 }

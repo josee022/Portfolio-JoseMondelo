@@ -1,0 +1,40 @@
+# José Mondelo Álvarez
+
+> Full-stack developer from Sanlúcar de Barrameda (Cádiz, Spain), working remote or hybrid. Sole technical lead of KNC, a SaaS platform in production for nurseries, senior care homes and sports clubs, built as one Flutter codebase for web, Android and iOS with a Firebase and AWS backend.
+
+## Profile
+
+- Role: Full-Stack Developer and Technical Lead at KNC (Kids and Clouds), Visasur Sistemas, since July 2025. Sole developer: frontend, backend, database, servers and app store releases.
+- Main stack: Flutter 3, Dart 3, Riverpod, go_router, Firebase (Auth, Firestore, Cloud Functions v2 in Node.js, Cloud Messaging, Crashlytics), AWS S3 and CloudFront, Holded API, SEPA direct debits. Also React, Next.js, TypeScript, Angular, Laravel and Django.
+- Languages: Spanish (native), English (A2).
+- Education: Higher Technical Diploma in Web Application Development (I.E.S. Doñana, 2022–2024). Prompt engineering for AI (Andalusian Digital Agency, 2025).
+
+## KNC in numbers
+
+- ~214,000 lines of Dart across 16 feature modules, 132 screens, 120 routes, 6 user roles, ~60 Firestore collections.
+- 61 Cloud Functions, more than 100 production audit and migration scripts.
+- Version 4.0 on the App Store and Google Play, 5,000+ downloads on Google Play.
+
+## Highlights
+
+- Migrated the data model from one centre per user to many centres per user, with per-co-admin permissions.
+- Direct S3 uploads with presigned URLs, CloudFront delivery with expiring signed URLs, and native downloads on web, Android and iOS that replaced an unauthenticated server proxy.
+- Real-time messaging with server-side scheduled sends and multi-device push notifications.
+- Payments: SEPA direct debit files for families and invoicing to centres through the Holded API. Stripe and Fiskaly integrations prepared.
+- Access control with dynamic QR codes validated on the server, and biometric sign-in (Face ID, fingerprint).
+- Interactive 3D sales tours built with Three.js.
+- AI-assisted development with Claude Code, project skills, hooks and verification.
+
+## Links
+
+- [Portfolio (Spanish)](https://portfolio-jose-mondelo.vercel.app/es)
+- [Portfolio (English)](https://portfolio-jose-mondelo.vercel.app/en)
+- [CV (PDF, Spanish)](https://portfolio-jose-mondelo.vercel.app/cv/CV_JoseMondelo_ES.pdf)
+- [CV (PDF, English)](https://portfolio-jose-mondelo.vercel.app/cv/CV_JoseMondelo_EN.pdf)
+- [KNC](https://kidsnclouds.es)
+- [KNC on the App Store](https://apps.apple.com/es/app/knc/id6747173978)
+- [KNC on Google Play](https://play.google.com/store/apps/details?id=com.knc.kncapp)
+- [KNC 3D tour](https://kids-and-clouds-app.web.app/tour/index.html)
+- [GitHub](https://github.com/josee022)
+- [LinkedIn](https://www.linkedin.com/in/jose-mondelo/)
+- [Email](mailto:josemondelo022@gmail.com)

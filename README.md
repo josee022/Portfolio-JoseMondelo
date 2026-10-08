@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio de José Mondelo
 
-## Getting Started
+Portfolio personal en español e inglés: [portfolio-jose-mondelo.vercel.app](https://portfolio-jose-mondelo.vercel.app).
 
-First, run the development server:
+Hecho con Next.js 16 (App Router, páginas estáticas), React 19 y Tailwind CSS 4. Se despliega en Vercel al subir cambios a `main`.
+
+## Comandos
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # servidor de desarrollo en http://localhost:3000
+npm run build   # compilación de producción
+npm run lint    # ESLint
+npm run cv      # genera public/cv/CV_JoseMondelo_{ES,EN}.pdf (antes: npm run build)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run cv` arranca la web en el puerto 3123 e imprime `/es/cv` y `/en/cv` con Chrome en modo headless. Si Chrome no está en la ruta habitual, indica otra con `CHROME_PATH`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Dónde está cada cosa
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Qué | Dónde |
+| --- | --- |
+| Textos en español e inglés (web y CV) | `src/content/es.js`, `src/content/en.js` |
+| Enlaces, proyectos, capturas y rutas de los CV | `src/content/site.js` |
+| Página principal | `src/app/[lang]/page.js` |
+| CV imprimible (fuente de los PDF) | `src/app/[lang]/cv/page.js` |
+| Metadatos, fuentes y tema claro/oscuro | `src/app/[lang]/layout.js` |
+| Imagen para redes sociales | `src/app/[lang]/opengraph-image.js` |
+| Sitemap y robots | `src/app/sitemap.js`, `src/app/robots.js` |
+| Resumen para herramientas de IA | `public/llms.txt` |
+| Componentes | `src/components/` |
+| Colores, tipografía y animaciones | `src/app/globals.css` |
 
-## Learn More
+Al cambiar un texto del CV en `es.js` o `en.js`, vuelve a ejecutar `npm run build && npm run cv` para regenerar los PDF.
 
-To learn more about Next.js, take a look at the following resources:
+## Capturas de KNC
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Todas las capturas de `public/knc/` son de centros de demostración con datos ficticios, sacadas de los tours públicos. No se publican datos reales de centros, familias ni menores.

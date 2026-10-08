@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# documentos personales y borradores (no se publican)
+_borradores/
+Certificado*.pdf
+CVJoseMondelo.pdf
+PROMPT_PORTFOLIO_KNC.md
+
+# skills de Claude Code instaladas en local (se reinstalan con npx skills)
+.claude/skills/
+skills-lock.json

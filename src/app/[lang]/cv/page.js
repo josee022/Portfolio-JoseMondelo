@@ -20,7 +20,7 @@ const css = `
   .cv a { color:inherit; text-decoration:none; }
   .cv b { font-weight:600; color:var(--ink); }
   .cv header { display:flex; gap:18px; align-items:center; }
-  .cv header img { width:86px; height:86px; border-radius:50%; object-fit:cover; object-position:50% 20%; }
+  .cv header img { width:86px; height:86px; border-radius:50%; object-fit:cover; }
   .cv h1 { font-size:22pt; font-weight:700; letter-spacing:-0.025em; color:var(--ink); line-height:1.1; margin:0; }
   .cv .role { font-size:10.5pt; font-weight:500; color:var(--accent); margin-top:3px; }
   .cv .contact { margin-top:7px; font-size:8.3pt; color:var(--muted); }
@@ -62,7 +62,7 @@ export default async function CvPage({ params }) {
       <article className="cv">
         <header>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={person.photo} alt={person.name} />
+          <img src={person.photoCv} alt={person.name} />
           <div>
             <h1>{person.name}</h1>
             <div className="role">{c.title}</div>

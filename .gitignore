@@ -49,3 +49,6 @@ PROMPT_PORTFOLIO_KNC.md
 # skills de Claude Code instaladas en local (se reinstalan con npx skills)
 .claude/skills/
 skills-lock.json
+
+# foto original (las versiones web están en public/img)
+FOTO PROFESIONAL.jpeg

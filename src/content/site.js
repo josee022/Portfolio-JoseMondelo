@@ -13,6 +13,7 @@ export const person = {
   linkedin: "https://www.linkedin.com/in/jose-mondelo/",
   instagram: "https://www.instagram.com/josee022/",
   photo: "/img/jose.webp",
+  photoCv: "/img/jose-cv.webp",
   locality: "Sanlúcar de Barrameda",
   region: "Cádiz",
   country: "ES",
